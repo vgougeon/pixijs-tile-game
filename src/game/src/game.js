@@ -1,9 +1,10 @@
 import { Application } from '@pixi/app'
+import Tilemap from './render/tilemap';
+import Camera from './render/camera';
 class Game {
   constructor() {
     this.app = this.createView()
     document.body.appendChild(this.app.view);
-    console.log('done')
   }
   createView() {
     const app = new Application({
@@ -18,8 +19,14 @@ class Game {
   }
   resize() {
     this.app.renderer.resize(window.innerWidth, window.innerHeight)
+    if(this.tilemap)
+      this.tilemap.resize()
   }
-  loop() {
+  initCamera() {
+    this.camera = new Camera()
+  }
+  renderMap() {
+    this.tilemap = new Tilemap(64)
   }
 }
 

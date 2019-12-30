@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { game } from './src/game';
+import main from './src/main';
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -11,5 +11,7 @@ class Container extends Component {
     );
   }
 }
+
+main()
  
 export default Container;
