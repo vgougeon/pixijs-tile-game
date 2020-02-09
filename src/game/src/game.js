@@ -26,7 +26,7 @@ class Game {
     this.camera = new Camera()
   }
   renderMap() {
-    this.tilemap = new Tilemap(64)
+    this.tilemap = new Tilemap(80)
   }
 }
 
